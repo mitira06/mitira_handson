@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--
+        Exercise 6: Component scanning replaces manual <bean> declarations below.
+        Spring will scan com.library and its sub-packages for classes annotated
+        with @Component, @Service, @Repository, or @Aspect, and register them
+        as beans automatically.
+    -->
+    <context:component-scan base-package="com.library" />
+
+    <!--
+        Exercises 1, 2, 5: manual bean declarations (kept here, commented out,
+        to show the XML-based alternative to annotation-based configuration).
+        With component-scan active above, these are redundant; Spring would
+        complain about duplicate bean ids if both were active at once.
+
+    <bean id="bookRepository" class="com.library.repository.BookRepository" />
+
+    <bean id="bookService" class="com.library.service.BookService">
+        <property name="bookRepository" ref="bookRepository" />
+    </bean>
+
+    <bean id="loggingAspect" class="com.library.aspect.LoggingAspect" />
+    -->
+
+    <!--
+        Exercise 7: XML-based reference for constructor injection (constructor-arg)
+        and setter injection (property), shown side by side. This is the
+        "old way"; our actual config above uses component-scan + @Autowired,
+        which Spring resolves to the constructor automatically. If you wanted
+        pure XML configuration instead of annotations, this is what it looks like:
+
+    <bean id="bookRepository" class="com.library.repository.BookRepository" />
+
+    <bean id="bookService" class="com.library.service.BookService">
+        <constructor-arg ref="bookRepository" />
+    </bean>
+
+    <bean id="bookServiceViaSetter" class="com.library.service.BookService">
+        <property name="bookRepository" ref="bookRepository" />
+    </bean>
+    -->
+
+    <!--
+        Tell Spring to scan for @Aspect-annotated beans and create proxies for matched methods.
+        proxy-target-class="true" forces CGLIB (subclass-based) proxying instead of the
+        default JDK dynamic proxy, which only works on interfaces. BookService doesn't
+        implement an interface, so this is required for the aspect to actually apply.
+    -->
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
+</beans>
