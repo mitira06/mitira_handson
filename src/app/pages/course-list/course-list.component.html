@@ -1,0 +1,39 @@
+<section class="course-list">
+  <h2>Course Listing</h2>
+
+  <div class="toolbar">
+    <input
+      name="search"
+      placeholder="Search courses..."
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="onSearchChange()"
+    >
+  </div>
+
+  <!-- #25: loading state -->
+  <p *ngIf="isLoading$ | async">Loading courses...</p>
+
+  <p class="error" *ngIf="error$ | async as error">{{ error }}</p>
+
+  <ng-container *ngIf="(filteredCourses$ | async) as courses">
+    <ng-container *ngIf="(enrolledIds$ | async) as enrolledIds">
+      <!-- #28: *ngIf / else for an empty list -->
+      <ng-container *ngIf="courses.length > 0; else noCourses">
+        <div class="grid">
+          <app-course-card
+            *ngFor="let course of courses; let i = index; trackBy: trackByCourseId"
+            [course]="course"
+            [enrolled]="enrolledIds.includes(course.id)"
+            (enrollRequested)="onEnroll(course.id, enrolledIds)"
+            (click)="onCardClick(course.id)"
+          ></app-course-card>
+        </div>
+      </ng-container>
+    </ng-container>
+    <ng-template #noCourses>
+      <p>No courses available.</p>
+    </ng-template>
+  </ng-container>
+
+  <p *ngIf="selectedCourseId">Selected course ID: {{ selectedCourseId }}</p>
+</section>

@@ -1,0 +1,245 @@
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, #ecfdf5 0%, #f0fdfa 45%, #ffffff 100%);
+  border: 1px solid #d1fae5;
+  border-radius: 16px;
+  padding: 2.25rem 2rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: #d1fae5;
+  color: #047857;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+.hero h1 {
+  margin: 0.85rem 0 0.5rem;
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  line-height: 1.25;
+}
+
+.hero h1 .accent {
+  color: rgb(16, 81, 185);
+}
+
+.hero > p {
+  color: #64748b;
+  font-size: 1rem;
+  max-width: 640px;
+  line-height: 1.65;
+}
+
+.accent-text {
+  color: #10b981;
+  font-weight: 600;
+}
+
+/* ---------- Stats ---------- */
+
+.stats {
+  display: flex;
+  gap: 1.25rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+.stat-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.stat-icon--green { background: #d1fae5; color: #10b981; }
+.stat-icon--blue  { background: #dbeafe; color: #3b82f6; }
+.stat-icon--amber { background: #fef3c7; color: #f59e0b; }
+
+.stat-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Enroll CTA ---------- */
+
+.enroll-cta {
+  margin-bottom: 2rem;
+}
+
+.enroll-cta button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.75rem;
+  background: #10b981;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.enroll-cta button:hover:not(:disabled) {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.enroll-cta button:disabled {
+  background: #cbd5e1;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.enroll-cta p {
+  margin: 0.75rem 0 0;
+  color: #047857;
+  font-weight: 600;
+}
+
+/* ---------- Quick course search ---------- */
+
+.search {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  max-width: 420px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.search label {
+  display: block;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.search input {
+  display: block;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 0.95rem;
+  background: #f8fafc;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search input:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+  background: #fff;
+}
+
+.suggestions {
+  margin-top: 0.65rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.suggestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  background: #fff;
+  border: none;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: left;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.suggestion:hover {
+  background: #ecfdf5;
+}
+
+.suggestion-name {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.suggestion-code {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.view-all {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  background: #ecfdf5;
+  border: none;
+  color: #047857;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.view-all:hover {
+  background: #d1fae5;
+}
+
+.no-matches {
+  padding: 0.6rem 0.85rem;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin: 0;
+}

@@ -1,0 +1,27 @@
+.app-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.global-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 1000;
+  background: rgba(37, 99, 235, 0.15);
+}
+
+.spinner {
+  height: 100%;
+  width: 40%;
+  background: #2563eb;
+  animation: loading-bar 1s ease-in-out infinite;
+}
+
+@keyframes loading-bar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}

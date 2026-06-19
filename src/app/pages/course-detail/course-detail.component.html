@@ -1,0 +1,12 @@
+<section class="course-detail" *ngIf="course$ | async as course">
+  <a routerLink="/courses">&larr; Back to courses</a>
+  <h2>{{ course.name }}</h2>
+  <p>Code: {{ course.code }}</p>
+  <p>Credits: {{ course.credits | creditLabel }}</p>
+  <p>Status: {{ course.gradeStatus }}</p>
+
+  <h3>Enrolled Students</h3>
+  <ul>
+    <li *ngFor="let student of (students$ | async)">{{ student }}</li>
+  </ul>
+</section>

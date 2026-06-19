@@ -1,0 +1,15 @@
+<section class="profile">
+  <h2>Student Profile</h2>
+  <p><strong>Name:</strong> {{ studentName }}</p>
+  <p><strong>Email:</strong> {{ studentEmail }}</p>
+
+  <h3>Enrolled Courses</h3>
+  <ul *ngIf="(enrolledCourses$ | async)?.length; else noEnrollments">
+    <li *ngFor="let course of enrolledCourses$ | async">
+      {{ course.name }} ({{ course.code }}) - {{ course.credits | creditLabel }}
+    </li>
+  </ul>
+  <ng-template #noEnrollments>
+    <p>You are not enrolled in any courses yet.</p>
+  </ng-template>
+</section>

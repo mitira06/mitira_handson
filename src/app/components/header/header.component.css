@@ -1,0 +1,24 @@
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e293b;
+  color: #fff;
+  padding: 0.9rem 1.5rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.links a {
+  color: #cbd5e1;
+  margin-left: 1.25rem;
+  font-weight: 500;
+}
+
+.links a.active,
+.links a:hover {
+  color: #fff;
+}

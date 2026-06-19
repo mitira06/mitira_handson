@@ -1,0 +1,57 @@
+Hands-On 1, Task 1 (#2): Notes on key Angular project files
+==============================================================
+
+angular.json
+  Workspace configuration file. Defines projects, build targets (build,
+  serve, test), file replacements, asset/style globs, and the production
+  budgets that warn/error if bundle sizes get too large.
+
+tsconfig.json
+  Root TypeScript configuration shared across the app and spec
+  compilations. Sets strict type-checking options and Angular compiler
+  options (strictTemplates, strictInjectionParameters, etc.).
+
+tsconfig.app.json
+  Extends tsconfig.json specifically for the application build - points at
+  src/main.ts as the entry point and excludes spec files.
+
+package.json
+  Lists npm dependencies (Angular, NgRx, RxJS) and devDependencies (Angular
+  CLI, TypeScript, Karma/Jasmine), plus the ng/start/build/test scripts.
+
+src/main.ts
+  The application's entry point. Calls bootstrapApplication(AppComponent,
+  appConfig) to start the standalone Angular app (no AppModule needed in
+  Angular 17+ standalone projects).
+
+src/app/app.config.ts
+  Standalone equivalent of AppModule's providers - registers the router,
+  HttpClient with interceptors, and the NgRx store/effects/devtools.
+
+src/app/app.component.ts
+  The root component. Hosts the header, global loading spinner, global
+  notification toast, and the <router-outlet> where routed pages render.
+
+src/index.html
+  The single HTML page served to the browser. Contains the <app-root>
+  element that Angular bootstraps into, plus the <base href="/"> tag the
+  router needs for relative navigation.
+
+Hands-On 1, Task 1 (#4): ng build output
+==============================================================
+Running `ng build` produces a dist/student-course-portal/browser folder.
+The compiled application code (bundled JS, including all components,
+services, and the NgRx store) lives in files like main-XXXX.js, with
+polyfills-XXXX.js and styles-XXXX.css alongside it. index.html in that
+folder references these bundles.
+
+Hands-On 1, Task 1 (#5): production budgets
+==============================================================
+In angular.json under architect > build > configurations > production,
+the "budgets" array sets:
+  - maximumWarning: the bundle size at which the CLI prints a warning but
+    the build still succeeds.
+  - maximumError: the bundle size at which the CLI fails the build outright.
+These thresholds apply per budget "type" (e.g. "initial" for the main
+bundle, "anyComponentStyle" for individual component stylesheets) and help
+catch bundle-size regressions before they ship.
