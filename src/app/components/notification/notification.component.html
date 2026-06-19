@@ -1,8 +1,0 @@
-<div
-  class="toast"
-  *ngIf="notificationService.notification$ | async as note"
-  [ngClass]="'toast--' + note.type"
->
-  {{ note.message }}
-  <button class="toast-close" (click)="notificationService.clear()">&times;</button>
-</div>
