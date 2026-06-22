@@ -1,0 +1,54 @@
+.event-section {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  max-width: 480px;
+}
+
+.event-btn {
+  background: #282c34;
+  color: #61dafb;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin: 4px 8px 4px 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.event-btn:hover {
+  background: #3b4148;
+}
+
+.counter-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.event-message {
+  margin-top: 10px;
+  font-style: italic;
+  color: #0645ad;
+}
+
+.currency-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.currency-row input {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 160px;
+}
+
+.currency-result {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: green;
+}

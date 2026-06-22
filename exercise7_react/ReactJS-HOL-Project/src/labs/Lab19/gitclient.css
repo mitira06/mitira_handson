@@ -1,0 +1,14 @@
+.gitclient-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.gitclient-container h1 {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+.gitclient-container p {
+  margin: 4px 0;
+}

@@ -1,0 +1,77 @@
+.employees-app {
+  max-width: 640px;
+}
+
+.theme-toggle-btn {
+  background: #282c34;
+  color: #61dafb;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.theme-toggle-btn:hover {
+  background: #3b4148;
+}
+
+.employees-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.employee-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.employee-info span {
+  display: block;
+}
+
+.employee-name {
+  font-weight: 600;
+}
+
+.employee-role {
+  color: #555;
+}
+
+.employee-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Theme-driven button styles, applied via the value read from ThemeContext */
+.btn-light {
+  background: #f1f1f1;
+  color: #1a1a1a;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.btn-light:hover {
+  background: #e2e2e2;
+}
+
+.btn-dark {
+  background: #1a1a1a;
+  color: #f1f1f1;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.btn-dark:hover {
+  background: #333;
+}

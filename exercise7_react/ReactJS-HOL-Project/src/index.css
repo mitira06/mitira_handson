@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+  background: #282c34;
+  padding: 12px 20px;
+  display: flex;
+  gap: 16px;
+}
+
+nav a {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.lab-content {
+  padding: 20px;
+}
+
+.lab-list {
+  padding: 20px;
+  line-height: 2;
+}
+
+.lab6-nav {
+  background: none;
+  padding: 0;
+  margin: 10px 0 20px 0;
+}
+
+.lab6-nav a {
+  color: #0645ad;
+}

@@ -1,0 +1,27 @@
+.textRed {
+  color: red;
+}
+
+.textGreen {
+  color: green;
+}
+
+.office-space img {
+  display: block;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+.office-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.office-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 18px;
+  width: 220px;
+}

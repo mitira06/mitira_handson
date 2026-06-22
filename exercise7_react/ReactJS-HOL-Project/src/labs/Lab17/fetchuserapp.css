@@ -1,0 +1,14 @@
+.fetchuser-app h1 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.fetchuser-app img {
+  border-radius: 8px;
+  display: block;
+}
+
+.fetchuser-loading {
+  color: #555;
+  font-style: italic;
+}
